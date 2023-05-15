@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Depression Prediction App</title>
+    <link rel="icon" href="static/bg.jpg" type="image/icon type">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+      .app-title {
+          color: black !important;
+      }
+  </style>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='depression.css') }}">
+</head>
+
+<body>
+<div class="container justify-content-center mt-2">
+    <h2 class="text-white mt-2 app-title" style="color: black;">Depression Prediction App</h2>
+    <h5 class="text-white mt-2 app-title" style="color: black;">This model predicts depression in patients</h5>
+    <form action='/predict' method="post">
+        <div class="row">
+            <div class="col-sm-12 col-lg-6 cardbg">
+                <div class="row">
+                    <div class="col-12 mt-3 mb-1">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Age</label>
+                            <input class="form-control validate border border-warning" placeholder="Age in form of 20-25" name="Age" id="first_name" type="text">
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="exampleInputEmail1">Feeling sad</label>
+                        <input id="last_name" name="Feeling sad" placeholder="Enter 0 for No, 1 for Yes" type="text" class="validate form-control border border-warning">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="exampleInputEmail1">Irritable towards people</label>
+                        <input id="_name" name="Irritable towards people" placeholder="Enter 0 for No, 1 for Yes" type="text" class="validate form-control border border-warning">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="exampleInputEmail1">Trouble sleeping at night</label>
+                        <input id="_name" name="Trouble sleeping at night" placeholder="Enter 0 for No, 1 for Yes" type="text" class="validate form-control border border-warning">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="exampleInputEmail1">Problems concentrating or making decision</label>
+                        <input id="_name" name="Problems concentrating or making decision" placeholder="Enter 0 for No, 1 for Yes" type="text" class="validate form-control border border-warning">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="exampleInputEmail1">loss of appetite</label>
+                        <input id="_name" name="loss of appetite" placeholder="Enter 0 for No, 1 for Yes" type="text" class="validate form-control border border-warning">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="exampleInputEmail1">Feeling of guilt</label>
+                        <input id="_name" name="Feeling of guilt" placeholder="Enter 0 for No, 1 for Yes" type="text" class="validate form-control border border-warning">
+                    </div>
+                    <div class="result">
+                          <p class="result-text {{ bhai }}"></p>
+                    </div>                  
+                    <div class="ml-3 mb-1 mt-2">
+                        <button type="submit" class="button">Predict Depression</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-lg-4  d-flex align-items-center">
+                <h4 class="prediction"></h4>
+            </div>
+        </div>
+    </form>
+</div>
+
+<br/>
+
+</body>
+</html>
+
